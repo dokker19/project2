@@ -70,3 +70,43 @@ Promise.all([
 }).catch(function(error) {
     console.error('Error loading the data: ', error);
 });
+
+
+// Data representing pay gap percentages
+var payGapData = [
+    { category: 'Men', percentage: 85 },
+    { category: 'Women', percentage: 15 }
+  ];
+
+  var svg = d3.selectAll("pay-gap-svg");
+
+  // Draw the dollar bill
+  var dollarBill = svg.append("g")
+    .attr("transform", "translate(50, 50)");
+
+  dollarBill.append("rect")
+    .attr("width", 20)
+    .attr("height", 100)
+    .attr("class", "pay-gap");
+
+  dollarBill.append("rect")
+    .attr("width", 20)
+    .attr("height", 100)
+    .attr("transform", "translate(30, 0)");
+
+  // Draw pay gap bars
+  var bars = svg.selectAll(".bar")
+    .data(payGapData)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function (d) {
+      return d.category === 'Men' ? 50 : 80;
+    })
+    .attr("y", function (d) {
+      return 100 - d.percentage;
+    })
+    .attr("width", 20)
+    .attr("height", function (d) {
+      return d.percentage;
+    });
+
