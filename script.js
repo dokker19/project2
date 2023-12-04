@@ -86,7 +86,7 @@ const y = d3.scaleLinear()
 
 // Create the SVG element and append it to the chart container
 
-const svg_wg = d3.selectAll("pay-gap-svg")
+const svg_wg = d3.select("pay-gap-svg")
 
 // Create a fake dataset
 const dataset = [
