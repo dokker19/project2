@@ -72,41 +72,67 @@ Promise.all([
 });
 
 
-// Data representing pay gap percentages
-var payGapData = [
-    { category: 'Men', percentage: 85 },
-    { category: 'Women', percentage: 15 }
-  ];
+// wage gap
+const width = 960;
+const height = 600;
 
-  var svg = d3.selectAll("pay-gap-svg");
+// Set up the x and y scales
 
-  // Draw the dollar bill
-  var dollarBill = svg.append("g")
-    .attr("transform", "translate(50, 50)");
+const x = d3.scaleTime()
+  .range([0, width]);
 
-  dollarBill.append("rect")
-    .attr("width", 20)
-    .attr("height", 100)
-    .attr("class", "pay-gap");
+const y = d3.scaleLinear()
+  .range([height, 0]);
 
-  dollarBill.append("rect")
-    .attr("width", 20)
-    .attr("height", 100)
-    .attr("transform", "translate(30, 0)");
+// Create the SVG element and append it to the chart container
 
-  // Draw pay gap bars
-  var bars = svg.selectAll(".bar")
-    .data(payGapData)
-    .enter().append("rect")
-    .attr("class", "bar")
-    .attr("x", function (d) {
-      return d.category === 'Men' ? 50 : 80;
-    })
-    .attr("y", function (d) {
-      return 100 - d.percentage;
-    })
-    .attr("width", 20)
-    .attr("height", function (d) {
-      return d.percentage;
-    });
+const svg_wg = d3.selectAll("pay-gap-svg")
 
+// Create a fake dataset
+const dataset = [
+  { date: new Date("2022-01-01"), value: 200 },
+  { date: new Date("2022-02-01"), value: 250 },
+  { date: new Date("2022-03-01"), value: 180 },
+  { date: new Date("2022-04-01"), value: 300 },
+  { date: new Date("2022-05-01"), value: 280 },
+  { date: new Date("2022-06-01"), value: 220 },
+  { date: new Date("2022-07-01"), value: 300 },
+  { date: new Date("2022-08-01"), value: 450 },
+  { date: new Date("2022-09-01"), value: 280 },
+  { date: new Date("2022-10-01"), value: 600 },
+  { date: new Date("2022-11-01"), value: 780 },
+  { date: new Date("2022-12-01"), value: 320 }
+];
+
+// Define the x and y domains
+x.domain(d3.extent(dataset, d => d.date));
+y.domain([0, d3.max(dataset, d => d.value)]);
+
+// Add the x-axis
+
+svg_wg.append("g")
+  .attr("transform", `translate(0,${height})`)
+  .call(d3.axisBottom(x)
+    .ticks(d3.timeMonth.every(1)) 
+    .tickFormat(d3.timeFormat("%b %Y"))); 
+
+
+// Add the y-axis
+
+svg_wg.append("g")
+  .call(d3.axisLeft(y))
+
+// Create the line generator
+
+const line = d3.line()
+  .x(d => x(d.date))
+  .y(d => y(d.value));
+
+// Add the line path to the SVG element
+
+svg_wg.append("path")
+  .datum(dataset)
+  .attr("fill", "none")
+  .attr("stroke", "steelblue")
+  .attr("stroke-width", 1)
+  .attr("d", line);
