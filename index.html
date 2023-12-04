@@ -3,9 +3,10 @@
 <head>
     <title>World Wealth Map</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link href="https://g1.nyt.com/fonts/css/web-fonts.7705b21d4573b168a8aaebc4ff17d395d2458dca.css" rel="stylesheet" type="text/css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: nyt-franklin, Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -53,7 +54,8 @@
         .description {
             text-align: justify;
             margin-top: 20px;
-            font-size: 14px;
+            font-size: 16px;
+            font: nyt-franklin;
         }
         
     </style>
@@ -79,15 +81,31 @@
         <div class="wage-container">
             <svg width="960" height="600" class="pay-gap-svg"></svg>
         </div>
-        <p class="description">
-            The wage gap, often referred to as the disparity in earnings between men and women, remains a significant social and economic issue with far-reaching implications. This gap is a manifestation of gender-based discrimination and systemic inequalities that persist in workplaces worldwide. Historically, women have earned less than their male counterparts for similar work, perpetuating economic imbalances and hindering societal progress. According to data from the U.S. Bureau of Labor Statistics, in 2020, women earned approximately 82 cents for every dollar earned by men.  While this represents an improvement from previous years, the gap remains a significant challenge. However, it is crucial to recognize that these statistics don't even encompass the entirety of the problem, as they often exclude unpaid domestic labor.  Ultimately, addressing the wage gap is essential for promoting gender equality, fostering diversity and inclusion, and maximizing the full potential of our workforce and makes sure to value the contributions of all individuals equally.
+        <p class="description wage-gap">
+            The wage gap, often referred to as the disparity in earnings between men and women, remains a significant social and economic issue with far-reaching implications. 
+            This gap is a manifestation of gender-based discrimination and systemic inequalities that persist in workplaces worldwide. 
+            <br><br>
+            Historically, women have earned less than their male counterparts for similar work, perpetuating economic imbalances and hindering societal progress. 
+            According to data from the U.S. Bureau of Labor Statistics, in 2020, women earned approximately 82 cents for every dollar earned by men.  
+            While this represents an improvement from previous years, the gap remains a significant challenge. 
+            <br><br>
+            However, it is crucial to recognize that these statistics don't even encompass the entirety of the problem, as they often exclude unpaid domestic labor.  
+            Ultimately, addressing the wage gap is essential for promoting gender equality, fostering diversity and inclusion, and maximizing the full potential of our workforce and makes sure to value the contributions of all individuals equally.
         </p>
         <h3>United States Wage Gap is even more complex.</h3>
         <div class="wage-container">
             <svg width="960" height="600" class="pay-gap-svg"></svg>
         </div>
-        <p>
-            The wage gap becomes even more complex and nuanced when considering the intersectionality of gender and race. Data reveals that women of color experience an even wider pay gap compared to their white counterparts. According to a study by the National Women's Law Center, in 2020, Black women earned only 63 cents, Native American women 60 cents, and Latina women 55 cents for every dollar earned by white, non-Hispanic men. This intersectional perspective underscores the need for a more comprehensive approach to addressing pay disparities. Women of color often face compounded challenges related to both gender and racial biases, leading to systemic barriers in career advancement and fair compensation. Recognizing and addressing these intersecting factors is crucial for creating effective policies and initiatives that promote equality for all. By acknowledging the multifaceted nature of the wage gap, we can work towards dismantling the barriers that disproportionately affect certain groups, fostering a more inclusive and equitable workforce.
+        <p class="description wage-gap-race">
+            The wage gap becomes even more complex and nuanced when considering the intersectionality of gender and race. 
+            Data reveals that women of color experience an even wider pay gap compared to their white counterparts. 
+            <br><br>
+            According to a study by the National Women's Law Center, in 2020, Black women earned only 63 cents, Native American women 60 cents, and Latina women 55 cents for every dollar earned by white, non-Hispanic men. 
+            This intersectional perspective underscores the need for a more comprehensive approach to addressing pay disparities. 
+            omen of color often face compounded challenges related to both gender and racial biases, leading to systemic barriers in career advancement and fair compensation. 
+            <br><br>
+            Recognizing and addressing these intersecting factors is crucial for creating effective policies and initiatives that promote equality for all. 
+            By acknowledging the multifaceted nature of the wage gap, we can work towards dismantling the barriers that disproportionately affect certain groups, fostering a more inclusive and equitable workforce.
         </p>
     </div>
     <script src="script.js"></script>
