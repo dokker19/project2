@@ -9,21 +9,19 @@ body, html {
 
 h1 {
     color: #333;
-    margin-top: 60px;
+    margin-top: 35px;
     font-size: 50px;
 }
 
+h2 {
+    margin-top: 15px;
+}
+
+
 p {
-    margin: 20 px;
+    margin: 10 px;
     font: 'nyt-franklin';
  }
-
-rect {
-    pointer-events: all;
-    fill-opacity: 0;
-    stroke-opacity: 0;
-    z-index: 1;
-}
 
 header {
     background-color: #333;
@@ -89,9 +87,8 @@ main {
     font-size: 20px;
 }
 .content {
-    width: 80%;
+    width: 90%;
     margin: auto;
-    margin-top: 20px;
 }
 /* .map-container {
     display: flex;
@@ -108,13 +105,21 @@ main {
     text-align: center;
     width: 120px;
     height: 50px;
-    padding: 2px;
+    padding: 8px;
     font: 12px sans-serif;
     background: #89cff0;
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
+    visibility: hidden;
 }
+
 .tooltip-line {
     stroke-opacity: 0.5;
   } 
+
+svg.bargraph1 { margin: 20px 10px; }
+    .blue { fill: #5abae6; }
+    .red { fill: #d34e4e; }
+    .green { fill: #9dbb19; }
+    .yellow { fill: #f7b358; }

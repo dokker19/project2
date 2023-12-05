@@ -4,24 +4,27 @@ document.addEventListener("DOMContentLoaded", function() {
     // Your SVG manipulation code here
     //------------------------1. PREPARATION------------------------//
 //-----------------------------SVG------------------------------//
-const width = window.innerWidth * 0.8;  // Adjust the width based on the window size
-const height = window.innerHeight * 0.8;  // Adjust the height based on the window size
-const margin = { top: 50, right: 50, bottom: 50, left: 80 };  // Adjust margins for better spacing
+// const width = window.innerWidth * 0.8;  // Adjust the width based on the window size
+// const height = window.innerHeight * 0.8;  // Adjust the height based on the window size
+// const margin = { top: 50, right: 50, bottom: 50, left: 80 };  // Adjust margins for better spacing
+const margin = { top: 30, right: 30, bottom: 30, left: 50 };
+const width = 1400 - margin_wage.left - margin_wage.right;
+const height = 450 - margin_wage.top - margin_wage.bottom;
 const padding = 30;  // Adjust padding for better spacing
 const adj = 30;
 
 // Append SVG to the body or a specific container
-svg = d3.select("body").append("svg")
+svg_income = d3.select("#income-container").append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
     .attr("viewBox", "-" + adj + " -" + adj + " " + (width + margin.left + margin.right + adj * 3) + " " + (height + margin.top + margin.bottom + adj * 3))
     .style("padding", padding)
     .style("margin", margin)
-    .classed("svg-content", true);
+    .classed("svg-conten1", true);
 
 //-----------------------------DATA-----------------------------//
 const timeConv = d3.timeParse("%Y");
-const dataset = d3.csv("household_income.csv");
-dataset.then(function(data) {
+const dataset_income = d3.csv("household_income.csv");
+dataset_income.then(function(data) {
     var slices = data.columns.slice(1).map(function(id) {
         return {
             id: id,
@@ -47,58 +50,65 @@ yScale.domain([(0), d3.max(slices, function(c) {
     ]);
 //-----------------------------AXES-----------------------------//
 const yaxis = d3.axisLeft()
-    .ticks((slices[0].values).length)
+    .ticks(((slices[0].values).length)/5)
+    .tickFormat(d3.format(".2s"))
     .scale(yScale);
 
 const xaxis = d3.axisBottom()
-    .ticks(d3.timeYear.every(1)) // Adjust the tick frequency to show only years
+    .ticks(d3.timeYear.every(5)) // Adjust the tick frequency to show only years
     .tickFormat(d3.timeFormat('%Y')) // Format ticks to display only the year
     .scale(xScale);
 
 //----------------------------LINES-----------------------------//
-const line = d3.line()
+const line_income = d3.line()
     .curve(d3.curveLinear)
     .x(function(d) { return xScale(d.date); })
     .y(function(d) { return yScale(d.measurement); });
 
 //-------------------------2. DRAWING---------------------------//
 //-----------------------------AXES-----------------------------//
-svg.append("g")
-    .attr("class", "axis")
+svg_income.append("g")
+    .attr("class", "x-axis")
     .attr("transform", "translate(0," + height + ")")
     .call(xaxis)
     .selectAll("text")
     .style("text-anchor", "end")
     .attr("dx", "-.8em")
     .attr("dy", ".15em")
-    .attr("transform", "rotate(-65)");
+    .attr("transform", "rotate(-65)")
+    .style("stroke-opacity", 1)
+    .style("font-size", "14px")
 
-svg.append("g")
-    .attr("class", "axis")
+svg_income.append("g")
+    .attr("class", "x-axis")
     .call(yaxis)
     .append("text")
     .attr("transform", "rotate(-90)")
     .attr("dy", ".75em")
     .attr("y", 6)
     .style("text-anchor", "end")
-    .text("Household Income (USD)");
+    .text("Household Income (USD)")
+    .style("stroke-opacity", 1)
+    .style("font-size", "14px")
 
 //----------------------------LINES-----------------------------//
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
-const lines = svg.selectAll("lines")
+const lines = svg_income.selectAll("lines")
     .data(slices)
     .enter()
     .append("g");
 
     lines.append("path")
     .attr("class", "line")
-    .attr("d", function(d) { return line(d.values); })
+    .attr("d", function(d) { return line_income(d.values); })
     .style("stroke", function(d, i) {
         return colorScale(i);
     })
-    .attr("data-color", function(d, i) {
-        return colorScale(i);
-    });
+    .style("stroke-opacity", 1)
+    .style("fill-opacity", 0)
+    // .attr("data-color", function(d, i) {
+    //     return colorScale(i);
+    // });
 
     lines.append("text")
     .attr("class","serie_label")
@@ -115,14 +125,15 @@ const lines = svg.selectAll("lines")
 
 const ghost_lines = lines.append("path")
     .attr("class", "ghost-line")
-    .attr("d", function(d) { return line(d.values); });    
+    .style("fill-opacity", 0)
+    .attr("d", function(d) { return line_income(d.values); });    
 
-const verticalLine = svg.append("line").attr("class", "vertical-line").style("stroke", "#ddd").style("stroke-dasharray", "5,5").attr("x1", 0).attr("x2", 0).attr("y1", 0).attr("y2", height);
+const verticalLine = svg_income.append("line").attr("class", "vertical-line").style("stroke", "#ddd").style("stroke-dasharray", "5,5").attr("x1", 0).attr("x2", 0).attr("y1", 0).attr("y2", height);
 
     // Add text elements to display values
-const valuesText = svg.append("g").attr("class", "values-text");
+const valuesText = svg_income.append("g").attr("class", "values-text");
 //---------------------------EVENTS-----------------------------//
-svg.on("mousemove", function (event) {
+svg_income.on("mousemove", function (event) {
     const mouseX = d3.pointer(event)[0];
     const invertedX = xScale.invert(mouseX);
 
@@ -158,7 +169,7 @@ svg.on("mousemove", function (event) {
 });
 
 // Create the vertical line with dates
-const verticalLineDates = svg.append("g").attr("class", "vertical-line-dates");
+const verticalLineDates = svg_income.append("g").attr("class", "vertical-line-dates");
 
 verticalLineDates.append("line")
     .style("stroke", "#dd0000")
@@ -174,7 +185,7 @@ verticalLineDates.append("text")
 
 
 
-svg.selectAll(".ghost-line")
+svg_income.selectAll(".ghost-line")
     .on('mouseover', function(d, i) {
         const selection = d3.select(this).raise();
 
