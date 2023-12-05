@@ -141,19 +141,19 @@ gRange.call(sliderRange);
 // Wage Gap and Race
 // Set dimensions and margins for the chart
 
-const margin_wage_race = { top: 30, right: 30, bottom: 30, left: 50 };
+const margin_wage_race = { top: 30, right: 30, bottom: 0, left: 50 };
 const width_wage_race = 800 - margin_wage_race.left - margin_wage_race.right;
-const height_wage_race = 350 - margin_wage_race.top - margin_wage_race.bottom;
+const height_wage_race = 300 - margin_wage_race.top - margin_wage_race.bottom;
 
 const dataset_wage_race = [
-    {source:"White Men", x: Math.random() * width_wage_race - 25, y:  Math.random() * height_wage_race, val: (100-40), color: "#C9D6DF"},
-    {source:"Black Men", x: Math.random() * width_wage_race - 25, y:  Math.random() * height_wage_race, val: (74-40), color: "#FF7779"},
-    {source:"Asian Men", x: Math.random() * width_wage_race - 25, y:  Math.random() * height_wage_race, val: (120-40), color: "#329932"},
-    {source:"Hispanic Men", x: Math.random() * width_wage_race - 25, y:  Math.random() * height_wage_race, val:( 63-40), color: "#963939"},
-    {source:"White Women", x: Math.random() * width_wage_race - 25, y:  Math.random() * height_wage_race, val: (80-40), color: "#89cff0"},
-    {source:"Black Women", x: Math.random() * width_wage_race - 25, y:  Math.random() * height_wage_race, val: (67-40), color: "#F7EECF"},
-    {source:"Asian Women", x: Math.random() * width_wage_race - 25, y:  Math.random() * height_wage_race, val: (92-40), color: "#99cc99"},
-    {source:"Hispanic Women", x: Math.random() * width_wage_race - 25, y:  Math.random() * height_wage_race, val: (57-40), color: "#F4C2C2"},
+    {source:"White Men", x: 404.68220662847807, y:  128.44596129268746, val: (100-40), color: "#C9D6DF"},
+    {source:"Black Men", x:404.68220662847807, y:  228.44596129268746, val: (74-40), color: "#FF7779"},
+    {source:"Asian Men", x: 231.5006310420109, y: 107.77053020042274, val: (120-40), color: "#329932"},
+    {source:"Hispanic Men", x: 564.8420999995193, y:  235.11829993247164, val:( 63-40), color: "#963939"},
+    {source:"White Women", x: 324.36990217116102, y:  192.24889536931902, val: (80-40), color: "#89cff0"},
+    {source:"Black Women", x: 361.94711844067723, y:  75.43142323057744, val: (67-40), color: "#F7EECF"},
+    {source:"Asian Women", x: 502.40215429040654, y:  107.22254777746005, val: (92-40), color: "#99cc99"},
+    {source:"Hispanic Women", x: 608.9185354685787, y:  200.7587494589928, val: (57-40), color: "#F4C2C2"}
   ];
 
   // Set up the SVG container
