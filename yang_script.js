@@ -120,7 +120,7 @@ for (let i = 0; i < data0.length; i++) {
   color.push(['red', 'blue', 'yellow', 'green'][i % 4]);
 }
 
-const barHeight = 15; // Adjust the height of the bars to make them thinner
+const barHeight = 20; // Adjust the height of the bars to make them thinner
 const verticalSpacing = 10; // Adjust the vertical spacing between bars
 
 const svg2 = d3.select('svg.bargraph1');
@@ -279,7 +279,7 @@ for (let i = 0; i < data2.length; i++) {
     color2.push(['red', 'blue', 'yellow', 'green'][i % 4]);
 }
 
-const barHeight2 = 15; // Adjust the height of the bars to make them thinner
+const barHeight2 = 20; // Adjust the height of the bars to make them thinner
 const verticalSpacing2 = 10; // Adjust the vertical spacing between bars
 
 // Create a new SVG container for the second bar graph
