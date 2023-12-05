@@ -9,9 +9,22 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://unpkg.com/d3-simple-slider"></script>
     <link href="https://g1.nyt.com/fonts/css/web-fonts.7705b21d4573b168a8aaebc4ff17d395d2458dca.css" rel="stylesheet" type="text/css">
-    <style>
+    <script>
+        function scaleUpText() {
+            // Get all elements with the class 'scalable-text'
+            var elements = document.getElementsByClassName('scalable-text');
 
-    </style>
+            // Loop through each element and scale up the font size
+            for (var i = 0; i < elements.length; i++) {
+                var currentFontSize = window.getComputedStyle(elements[i], null).getPropertyValue('font-size');
+                var newSize = (parseFloat(currentFontSize) * 1.2) + 'px'; // You can adjust the scaling factor (1.2 in this case)
+                elements[i].style.fontSize = newSize;
+            }
+        }
+
+        // Call the scaleUpText function when the window has finished loading
+        window.onload = scaleUpText;
+    </script>
 </head>
 
 <body>
@@ -35,9 +48,9 @@
         <section id="home" class="full-screen-section" >
             <div class="content">
                 <div class="text">
-                    <h1>Understanding Wealth Inequality</h1> 
+                    <h1 class="scalable-text">Understanding Wealth Inequality</h1> 
                     <div class="home-image" id="img1"><img src="income-inequality-coins.jpg"></div>
-                    <p class ='intro'>
+                    <p class="scalable-text" class ='intro'>
                         In a world shaped by interconnected economies, comprehending the challenges and disparities in wealth distribution is more crucial than ever. 
                         <br><br>
                         Our mission is to educate and illuminate the intricacies of wealth inequality, providing insights and data-driven analysis to foster a deeper understanding of the complex factors at play. 
@@ -50,12 +63,12 @@
         <section id="section1" class="full-screen-section">
             <div class="content">
                 <div class="text">
-                    <h2>Global Wealth Inequality Map</h2>
+                    <h2 class="scalable-text">Global Wealth Inequality Map</h2>
                     <div>
                         <svg class="world_map" width="1060" height="450"></svg>
                         <!-- <svg class="world_map" ></svg> -->
                     </div>
-                    <p>
+                    <p class="scalable-text">
                         The GINI coefficient is a measure of income or wealth distribution across a population, 
                         used to gauge economic inequality. Values range from 0 to 100, with 0 representing perfect equality
                         (where everyone has the same income) and 100 representing perfect inequality (where all income 
@@ -77,9 +90,10 @@
             <div class="content">
                 <div id="my_dataviz"></div>
                 <div class="text">
-                    <h2>GDP and Wealth Inequality</h2>
+                    <h2 class="scalable-text">GDP and Wealth Inequality</h2>
+                    <div id="dot-tooltip" style="position: absolute; top: 1400px; left: 200px;"></div>
                     <div id="my_dataviz"></div>
-                    <p>
+                    <h5 class="scalable-text">
                         When we look at a graph of the most recent data regarding the wealth disparities between countries, we can see a trend. In comparing their GDP value and their current GINI index, we can see a downward trend. This means that a lower GDP is correlated to having greater wealth disparity. However, there can be exceptions. 
                         <br><br>
                         Let’s take a look at the next graphs.
@@ -91,8 +105,8 @@
     <section id="section2" class="full-screen-section">
         <div class="content">
             <div class="text">
-                <h3>So let's visualize some countries with high GINI index. </h2>
-                <p>
+                <h3 class="scalable-text">So let's visualize some countries with high GINI index. </h2>
+                <p class="scalable-text">
                     The GINI coefficient is a measure of income or wealth distribution across a population, 
                     used to gauge economic inequality. Values range from 0 to 100, with 0 representing perfect equality
                     (where everyone has the same income) and 100 representing perfect inequality (where all income 
@@ -117,9 +131,9 @@
         <section id="section3" class="full-screen-section">
             <div class="content">
                 <div class="text">
-                    <h3>United States, with GINI index of 41.5, is at the botom. Does that mean the income inequality is not
+                    <h3 class="scalable-text">United States, with GINI index of 41.5, is at the botom. Does that mean the income inequality is not
                         a problem in the states?</h3>
-                    <p>
+                    <p class="scalable-text">
                         The United States, with a GINI index of 41.5, is at the bottom. And lower the GINI index, the lesser the inequality.
                          Does that mean income inequality is not a problem in the states?
                          The illustration below will give a big picture view…
@@ -143,8 +157,8 @@
         <section id="section4" class="full-screen-section">
             <div class="content">
                 <div class="text">
-                    <h2>United States Income Representation</h2>
-                    <p class="description wage-gap">
+                    <h2 class="scalable-text">United States Income Representation</h2>
+                    <p class="scalable-text" class="description wage-gap">
                         Before getting into further details about why the wealth, we can look at how the wealth gap in the United States has changed over time. 
                         Going all the way back to the 1960s, we can see that gaps between household incomes were lower. 
                         However, as the country grew and became more developed over the years, we can see a sharp increase in only the top 10% of earners. 
@@ -164,10 +178,10 @@
         <section id="section5" class="full-screen-section">
             <div class="content">
                 <div class="text">
-                    <h2>United States Wage Gap Representation</h2>
+                    <h2 class="scalable-text">United States Wage Gap Representation</h2>
                     <div id="wage-container"></div>
                     <div id="slider-range"></div>
-                    <p class="description wage-gap">
+                    <p class="scalable-text" class="description wage-gap">
                         Delving into the intricacies of wealth inequality unveils a crucial dimension often overlooked—the gendered aspect. Throughout history, women have consistently faced lower pay, and, in some instances, no compensation for their labor. Recognizing and addressing this gender-based wealth disparity is essential for dismantling systemic barriers and fostering a fairer economic landscape.
                         <br><br>
                         The wage gap, often referred to as the disparity in earnings between men and women, remains a significant social and economic issue with far-reaching implications. 
@@ -186,10 +200,10 @@
         <section id="section6" class="full-screen-section">
             <div class="content">
                 <div class="text">
-                    <h2>United States Wage Gap is even more complex.</h2>
+                    <h2 class="scalable-text">United States Wage Gap is even more complex.</h2>
                     <div id="race-gap-container">
                     </div>
-                    <p class="description wage-gap-race">
+                    <p class="scalable-text" class="description wage-gap-race">
                         The wage gap is not a one-size-fits-all issue; its intricacies deepen when considering the intersectionality of gender and race. 
                         The disparities become glaringly pronounced when analyzing data that highlights the earnings of women of color compared to their white counterparts.
                         <br><br>
