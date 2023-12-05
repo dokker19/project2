@@ -1,0 +1,188 @@
+﻿country,c3,year,region_wb,population,gdp,gini_std
+Afghanistan,AFG,2017,South Asia,35643416,2096,46
+Angola,AGO,2019,Sub-Saharan Africa,32353588,6602,63
+Albania,ALB,2020,Europe and Central Asia,2866849,13278,35
+United Arab Emirates,ARE,2019,Middle East and North Africa,9211657,71782,26
+Argentina,ARG,2022,Latin America and the Caribbean,45276780,22447,38
+Armenia,ARM,2021,Europe and Central Asia,2790974,14193,31
+Australia,AUS,2018,East Asia and the Pacific,24979230,49053,34
+Austria,AUT,2022,Europe and Central Asia,8922082,56281,31
+Azerbaijan,AZE,2018,Europe and Central Asia,10152522,14210,19
+Burundi,BDI,2014,Sub-Saharan Africa,10494913,831,54
+Belgium,BEL,2022,Europe and Central Asia,11611419,53156,27
+Benin,BEN,2019,Sub-Saharan Africa,12290444,3156,53
+Burkina Faso,BFA,2019,Sub-Saharan Africa,20951638,2110,57
+Bangladesh,BGD,2022,South Asia,169356256,6263,50
+Bulgaria,BGR,2022,Europe and Central Asia,6885868,26823,39
+Bahrain,BHR,2015,Middle East and North Africa,1362142,48454,60
+The Bahamas,BHS,2013,Latin America and the Caribbean,385650,33482,51
+Bosnia and Herzegovina,BIH,2011,Europe and Central Asia,3743142,10933,38
+Belarus,BLR,2020,Europe and Central Asia,9633740,19240,29
+Belize,BLZ,1999,Latin America and the Caribbean,232733,7954,53
+Bolivia,BOL,2021,Latin America and the Caribbean,12079472,8052,42
+Brazil,BRA,2022,Latin America and the Caribbean,214326224,15093,49
+Barbados,BRB,2017,Latin America and the Caribbean,279187,16199,46
+Brunei,BRN,2016,East Asia and the Pacific,425994,59981,28
+Botswana,BWA,2016,Sub-Saharan Africa,2352416,14374,58
+Central African Republic,CAF,2021,Sub-Saharan Africa,5457154,838,57
+Canada,CAN,2019,North America,37522584,49176,32
+Switzerland,CHE,2021,Europe and Central Asia,8691406,70097,34
+Chile,CHL,2022,Latin America and the Caribbean,19493184,25886,47
+China,CHN,2021,East Asia and the Pacific,1425893504,17657,44
+Cote d'Ivoire,CIV,2019,Sub-Saharan Africa,26147550,5132,56
+Cameroon,CMR,2014,Sub-Saharan Africa,22299586,3530,60
+"Congo, Republic of the",COG,2012,Sub-Saharan Africa,4713257,5267,61
+Colombia,COL,2020,Latin America and the Caribbean,50930660,13358,54
+Comoros,COM,2014,Sub-Saharan Africa,714612,3183,59
+Cape Verde,CPV,2015,Sub-Saharan Africa,552166,6692,57
+Costa Rica,CRI,2022,Latin America and the Caribbean,5153957,21987,48
+Cuba,CUB,2000,Latin America and the Caribbean,11105791,4385,42
+Cyprus,CYP,2022,Europe and Central Asia,1244188,43620,31
+Czechia,CZE,2022,Europe and Central Asia,10510751,41667,26
+Germany,DEU,2022,Europe and Central Asia,83408552,53560,31
+Djibouti,DJI,2017,Middle East and North Africa,1040233,4452,44
+Dominica,DMA,2008,Latin America and the Caribbean,68782,12393,55
+Denmark,DNK,2022,Europe and Central Asia,5854240,59704,26
+Dominican Republic,DOM,2022,Latin America and the Caribbean,11117873,19338,38
+Algeria,DZA,2012,Middle East and North Africa,37260564,11271,34
+Ecuador,ECU,2022,Latin America and the Caribbean,17797736,10859,45
+Egypt,EGY,2018,Middle East and North Africa,103740768,11363,36
+Spain,ESP,2022,Europe and Central Asia,47486932,39834,34
+Estonia,EST,2022,Europe and Central Asia,1328701,37826,32
+Ethiopia,ETH,2016,Sub-Saharan Africa,105293224,1864,51
+Finland,FIN,2022,Europe and Central Asia,5535992,49586,29
+Fiji,FJI,2020,East Asia and the Pacific,920422,10967,35
+France,FRA,2022,Europe and Central Asia,64531444,46020,33
+"Micronesia, Federated States of",FSM,2013,East Asia and the Pacific,108609,3382,42
+Gabon,GAB,2017,Sub-Saharan Africa,2140215,14478,46
+United Kingdom,GBR,2021,Europe and Central Asia,67281040,44949,33
+Georgia,GEO,2021,Europe and Central Asia,3757980,15487,37
+Ghana,GHA,2017,Sub-Saharan Africa,30222262,4930,57
+Guinea,GIN,2019,Sub-Saharan Africa,12877539,2545,47
+"Gambia, The",GMB,2021,Sub-Saharan Africa,2639916,2077,54
+Guinea-Bissau,GNB,2019,Sub-Saharan Africa,1970457,1891,51
+Equatorial Guinea,GNQ,2006,Sub-Saharan Africa,905418,28879,56
+Greece,GRC,2022,Europe and Central Asia,10445365,31517,32
+Grenada,GRD,2008,Latin America and the Caribbean,112478,13634,47
+Guatemala,GTM,2014,Latin America and the Caribbean,15713740,7939,48
+Guyana,GUY,2006,Latin America and the Caribbean,758367,8239,46
+Hong Kong,HKG,2016,East Asia and the Pacific,7435927,58098,42
+Honduras,HND,2021,Latin America and the Caribbean,10278345,5572,54
+Croatia,HRV,2022,Europe and Central Asia,4060135,34025,29
+Haiti,HTI,2012,Latin America and the Caribbean,10108539,3027,61
+Hungary,HUN,2022,Europe and Central Asia,9709786,35255,27
+Indonesia,IDN,2022,East Asia and the Pacific,273753184,12410,40
+India,IND,2022,South Asia,1407563904,7096,50
+Ireland,IRL,2022,Europe and Central Asia,4986526,113871,30
+Iraq,IRQ,2013,Middle East and North Africa,35481800,9504,41
+Iceland,ISL,2018,Europe and Central Asia,352946,56817,26
+Israel,ISR,2020,Middle East and North Africa,8757489,39681,38
+Italy,ITA,2022,Europe and Central Asia,59240328,43788,36
+Jamaica,JAM,2017,Latin America and the Caribbean,2808376,9985,47
+Jordan,JOR,2014,Middle East and North Africa,8658026,10605,40
+Japan,JPN,2017,East Asia and the Pacific,126255864,41444,32
+Kazakhstan,KAZ,2018,Europe and Central Asia,18538100,25544,31
+Kenya,KEN,2021,Sub-Saharan Africa,53005612,4746,54
+Kyrgyzstan,KGZ,2020,Europe and Central Asia,6424874,4726,32
+Cambodia,KHM,2014,East Asia and the Pacific,15210817,3378,47
+Kiribati,KIR,2020,East Asia and the Pacific,126463,1897,32
+Saint Kitts and Nevis,KNA,2009,Latin America and the Caribbean,47286,24623,49
+"Korea, Republic of",KOR,2020,East Asia and the Pacific,51844692,42397,29
+Kuwait,KWT,2000,Middle East and North Africa,1934901,58117,39
+Laos,LAO,2019,East Asia and the Pacific,7212053,7840,41
+Lebanon,LBN,2012,Middle East and North Africa,5178337,19180,37
+Liberia,LBR,2016,Sub-Saharan Africa,4706097,1525,51
+Libya,LBY,2008,Middle East and North Africa,6228370,32591,34
+Saint Lucia,LCA,2016,Latin America and the Caribbean,176413,14810,51
+Sri Lanka,LKA,2019,South Asia,21649664,13639,51
+Lesotho,LSO,2018,Sub-Saharan Africa,2198017,2502,58
+Lithuania,LTU,2022,Europe and Central Asia,2786651,39593,37
+Luxembourg,LUX,2022,Europe and Central Asia,639321,115542,32
+Latvia,LVA,2022,Europe and Central Asia,1873919,32733,35
+Morocco,MAR,2014,Middle East and North Africa,34248600,7462,43
+Moldova,MDA,2021,Europe and Central Asia,3061506,13602,30
+Madagascar,MDG,2013,Sub-Saharan Africa,23588072,1491,57
+Maldives,MDV,2020,South Asia,514438,13419,44
+Mexico,MEX,2022,Latin America and the Caribbean,126705144,19547,44
+Marshall Islands,MHL,2020,East Asia and the Pacific,43413,5711,38
+North Macedonia,MKD,2020,Europe and Central Asia,2111072,15780,34
+Mali,MLI,2021,Sub-Saharan Africa,21904982,2121,39
+Malta,MLT,2022,Middle East and North Africa,526748,48240,32
+Myanmar,MMR,2017,East Asia and the Pacific,52288340,4313,35
+Montenegro,MNE,2021,Europe and Central Asia,627859,20710,35
+Mongolia,MNG,2018,East Asia and the Pacific,3163991,12052,36
+Mozambique,MOZ,2020,Sub-Saharan Africa,31178238,1233,63
+Mauritania,MRT,2014,Sub-Saharan Africa,3843174,5020,49
+Mauritius,MUS,2017,Sub-Saharan Africa,1294741,22144,51
+Malawi,MWI,2020,Sub-Saharan Africa,19377060,1490,54
+Malaysia,MYS,2019,East Asia and the Pacific,32804020,27674,41
+Namibia,NAM,2016,Sub-Saharan Africa,2323352,10628,62
+Niger,NER,2019,Sub-Saharan Africa,23443392,1217,53
+Nigeria,NGA,2019,Sub-Saharan Africa,203304480,5076,36
+Nicaragua,NIC,2014,Latin America and the Caribbean,6208676,5386,50
+Netherlands,NLD,2022,Europe and Central Asia,17501696,58585,26
+Norway,NOR,2021,Europe and Central Asia,5403021,65909,29
+Nepal,NPL,2011,South Asia,27266398,2764,47
+Nauru,NRU,2013,East Asia and the Pacific,10694,9314,35
+New Zealand,NZL,2020,East Asia and the Pacific,5061133,42052,33
+Oman,OMN,2019,Middle East and North Africa,4602768,33814,34
+Pakistan,PAK,2019,South Asia,223293280,5158,45
+Panama,PAN,2022,Latin America and the Caribbean,4351267,33266,50
+Peru,PER,2022,Latin America and the Caribbean,33715472,12744,43
+Philippines,PHL,2021,East Asia and the Pacific,113880328,8096,41
+Palau,PLW,2014,East Asia and the Pacific,17796,17111,52
+Papua New Guinea,PNG,2010,East Asia and the Pacific,7583269,3284,43
+Poland,POL,2022,Europe and Central Asia,38307728,36798,32
+Portugal,PRT,2022,Europe and Central Asia,10290103,35746,35
+Paraguay,PRY,2022,Latin America and the Caribbean,6703799,13531,48
+West Bank and Gaza,PSE,2017,Middle East and North Africa,4700947,6402,45
+Qatar,QAT,2013,Middle East and North Africa,2035501,109626,29
+Romania,ROU,2022,Europe and Central Asia,19328560,32738,34
+Russia,RUS,2020,Europe and Central Asia,145617328,26587,35
+Rwanda,RWA,2017,Sub-Saharan Africa,12230339,1935,57
+Saudi Arabia,SAU,2018,Middle East and North Africa,35018132,47714,44
+Sudan,SDN,2014,Sub-Saharan Africa,37003248,4777,54
+Senegal,SEN,2019,Sub-Saharan Africa,16000781,3430,53
+Singapore,SGP,2012,East Asia and the Pacific,5381005,82887,40
+Solomon Islands,SLB,2013,East Asia and the Pacific,582365,2592,39
+Sierra Leone,SLE,2018,Sub-Saharan Africa,7861281,1610,51
+El Salvador,SLV,2022,Latin America and the Caribbean,6314167,9398,39
+San Marino,SMR,2017,Europe and Central Asia,34056,58202,25
+Somalia,SOM,2016,Sub-Saharan Africa,14292847,1076,55
+Serbia,SRB,2021,Europe and Central Asia,7296769,19828,29
+Sao Tome and Principe,STP,2017,Sub-Saharan Africa,208036,3935,55
+Suriname,SUR,2017,Latin America and the Caribbean,587559,17753,48
+Slovakia,SVK,2022,Europe and Central Asia,5447622,33172,24
+Slovenia,SVN,2022,Europe and Central Asia,2119410,42175,25
+Sweden,SWE,2022,Europe and Central Asia,10467097,54818,32
+Eswatini,SWZ,2017,Sub-Saharan Africa,1151390,8214,66
+Seychelles,SYC,2019,Sub-Saharan Africa,104373,29191,32
+Syria,SYR,2007,Middle East and North Africa,20703006,7416,38
+Turks and Caicos Islands,TCA,1999,Latin America and the Caribbean,17984,21376,48
+Chad,TCD,2019,Sub-Saharan Africa,16126866,1562,53
+Togo,TGO,2019,Sub-Saharan Africa,8243094,2073,57
+Thailand,THA,2021,East Asia and the Pacific,71601104,17087,38
+Tajikistan,TJK,2015,Europe and Central Asia,8524063,2960,36
+Turkmenistan,TKM,1998,Europe and Central Asia,4431517,3834,41
+Timor-Leste,TLS,2014,East Asia and the Pacific,1184830,3198,33
+Tonga,TON,2015,East Asia and the Pacific,106122,5645,37
+Trinidad and Tobago,TTO,1992,Latin America and the Caribbean,1285502,10924,40
+Tunisia,TUN,2016,Middle East and North Africa,11685667,10751,40
+Turkiye,TUR,2021,Middle East and North Africa,84775408,31467,44
+Tuvalu,TUV,2010,East Asia and the Pacific,10550,3335,41
+Tanzania,TZA,2018,Sub-Saharan Africa,58090440,2511,55
+Uganda,UGA,2020,Sub-Saharan Africa,44404608,2240,57
+Ukraine,UKR,2020,Europe and Central Asia,43909664,12408,29
+Uruguay,URY,2022,Latin America and the Caribbean,3426260,24427,41
+United States,USA,2022,North America,336997632,64703,40
+Uzbekistan,UZB,2003,Europe and Central Asia,25905904,3230,37
+Saint Vincent and the Grenadines,VCT,2008,Latin America and the Caribbean,110316,12170,49
+Venezuela,VEN,2014,Latin America and the Caribbean,30193258,22223,38
+Vietnam,VNM,2020,East Asia and the Pacific,96648688,10451,38
+Vanuatu,VUT,2020,East Asia and the Pacific,311685,2849,36
+Samoa,WSM,2014,East Asia and the Pacific,201757,5646,41
+Kosovo,XKX,2018,Europe and Central Asia,1709962,10755,43
+Yemen,YEM,2014,Middle East and North Africa,27753304,4434,40
+South Africa,ZAF,2017,Sub-Saharan Africa,56641212,13950,67
+Zambia,ZMB,2022,Sub-Saharan Africa,19473124,3298,63
+Zimbabwe,ZWE,2019,Sub-Saharan Africa,15354608,2203,62

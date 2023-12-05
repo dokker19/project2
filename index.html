@@ -91,6 +91,14 @@
         font-family: Georgia;
         font-size: 80%;
         }
+
+        .bubbles {
+        stroke-width: 2px;
+        stroke: white;
+    }
+        .bubbles:hover {
+            stroke: black;
+        }
     </style>
 </head>
 <body>
@@ -108,9 +116,7 @@
         <div class="line-container">
             <svg id="line" width="960" height="600"></svg>
         </div>
-        <div class="dot-container">
-            <svg id="dot" width="960" height="600"></svg>
-        </div>
+        <div id="my_dataviz"></div>
     </div>
     <script src="script.js"></script>
     <script src="line_chart.js"></script>
