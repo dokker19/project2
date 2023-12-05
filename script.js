@@ -9,8 +9,8 @@ var path = d3.geoPath().projection(projection);
 var svg_mapworld = d3.select("svg.world_map");
 
 // Define a tooltip
-var tooltip = d3.select("body").append("div")
-    .attr("class", "tooltip")
+var tooltip0 = d3.select(".world-container").append("div")
+    .attr("class", "tooltip0")
     .style("opacity", 0);
 
 // Load in GeoJSON data for countries and wealth inequality JSON data
@@ -47,23 +47,23 @@ Promise.all([
         .on("mouseover", function(event, d) {
             var countryData = giniData[d.id]; // Changed from d.properties.iso_a3 to d.id
             if (countryData) {
-                tooltip.transition()
+                tooltip0.transition()
                     .duration(200)
                     .style("opacity", .9);
-                tooltip.html(`Country: ${d.properties.name}<br>Gini Index: ${countryData.gini} (${countryData.year})`)
+                tooltip0.html(`Country: ${d.properties.name}<br>Gini Index: ${countryData.gini} (${countryData.year})`)
                     .style("left", (event.pageX) + "px")
                     .style("top", (event.pageY - 28) + "px");
             } else {
-                tooltip.transition()
+                tooltip0.transition()
                     .duration(200)
                     .style("opacity", .9);
-                tooltip.html(`Country: ${d.properties.name}<br>No Gini Index Data Available`)
+                tooltip0.html(`Country: ${d.properties.name}<br>No Gini Index Data Available`)
                     .style("left", (event.pageX) + "px")
                     .style("top", (event.pageY - 28) + "px");
             }
         })
         .on("mouseout", function(d) {
-            tooltip.transition()
+            tooltip0.transition()
                 .duration(500)
                 .style("opacity", 0);
         });
