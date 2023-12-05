@@ -1,0 +1,120 @@
+body, html {
+    margin: 0;
+    font-family: 'nyt-franklin','Arial', sans-serif;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    text-align: center;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+    margin-top: 60px;
+    font-size: 50px;
+}
+
+p {
+    margin: 20 px;
+    font: 'nyt-franklin';
+ }
+
+rect {
+    pointer-events: all;
+    fill-opacity: 0;
+    stroke-opacity: 0;
+    z-index: 1;
+}
+
+header {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1; /* Ensure the header is above the sections */
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-screen-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start; }
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    width: 80%;
+}
+
+.text {
+    flex: 1;
+    padding: 30px;
+}
+
+.placeholder-chart {
+    flex: 1;
+}
+
+
+
+.intro {
+    font-size: 20px;
+}
+.content {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+/* .map-container {
+    display: flex;
+    justify-content: center;
+} */
+
+.country {
+    stroke: #fff;
+    stroke-width: 0.5px;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 50px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #89cff0;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+.tooltip-line {
+    stroke-opacity: 0.5;
+  } 

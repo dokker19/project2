@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>World Wealth Map</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link href="https://g1.nyt.com/fonts/css/web-fonts.7705b21d4573b168a8aaebc4ff17d395d2458dca.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            font-family: nyt-franklin, Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 60px;
+        }
+
+        p {
+           margin: 20 px;
+        }
+
+        .content {
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .map-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .country {
+            stroke: #fff;
+            stroke-width: 0.5px;
+        }
+
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: 120px;
+            height: 50px;
+            padding: 2px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        .description {
+            text-align: justify;
+            margin-top: 20px;
+            font-size: 16px;
+            font: nyt-franklin;
+        }
+        svg.bargraph1 { margin: 20px 10px; }
+            .blue { fill: #5abae6; }
+            .red { fill: #d34e4e; }
+            .green { fill: #9dbb19; }
+            .yellow { fill: #f7b358; }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>Understanding Wealth Inequality</h1> 
+        
+    <div class="content">
+        <!-- Dokyung's section START-->
+        <p class="intro">
+<<<<<<< HEAD:index.html
+            In a world shaped by interconnected economies, comprehending the challenges and disparities in wealth distribution is more crucial than ever. 
+            <br><br>
+            Our mission is to educate and illuminate the intricacies of wealth inequality, providing insights and data-driven analysis to foster a deeper understanding of the complex factors at play. 
+            As economic globalization continues to intertwine nations and societies, the consequences of uneven wealth distribution extend far beyond individual financial circumstances, influencing access to education, healthcare, and opportunities for countless individuals.
+=======
+            In a world shaped by interconnected economies, comprehending the challenges and disparities in 
+            wealth distribution is more crucial than ever. Our mission is to educate and illuminate the intricacies 
+            of wealth inequality, providing insights and data-driven analysis.
+>>>>>>> 85bc312 (yang):yang.html
+        </p>
+        <h2>Global Wealth Inequality Map</h2>
+        <div class="map-container">
+            <svg class="world_map" width="960" height="600"></svg>
+        </div>
+        <p class="description">
+            The GINI coefficient is a measure of income or wealth distribution across a population, 
+            used to gauge economic inequality. Values range from 0 to 100, with 0 representing perfect equality
+             (where everyone has the same income) and 100 representing perfect inequality (where all income 
+             is held by a single person). This map visualizes the GINI coefficient for countries around the world, 
+             illustrating variations in economic disparity.
+            <br><br>
+            Interesting observations can be made from this map. For instance, countries with higher GINI coefficients,
+             often found in regions such as Latin America and Southern Africa, indicate greater wealth inequality. 
+             Conversely, countries in Western Europe and some parts of Asia, which typically have lower GINI coefficients, 
+             demonstrate more equal wealth distribution. These variations can be influenced by a variety of factors
+              including economic policies, social structures, and historical contexts.
+        </p>
+
+        <br/>
+
+        <p>
+            So let's visualize some countries with high GINI index. 
+        </p>
+        <div id="bargraph1-tooltip" style="position: absolute; top: 1400px; left: 200px;"></div>
+        <div class="barGraph-container">
+            <svg class="bargraph1" width='300' height='900' style="margin: 20px"></svg> 
+        </div>
+
+        <br/>
+
+        <p>
+            United States, with GINI index of 41.5, is at the botom. Does that mean the income inequality is not
+            a problem in the states? 
+        </p>
+
+        <div id="bargraph2-tooltip" style="position: absolute; top: 2400px; left: 200px;"></div>
+        <div class="barGraph2-container">
+            <svg class="bargraph2" width='300' height='900' style="margin: 20px"></svg> 
+        </div>
+        
+        <!-- Dokyung's section END-->
+
+
+        <h2>United States Wage Gap Representation</h2>
+        <div id="wage-container">
+        </div>
+        <p class="description wage-gap">
+            The wage gap, often referred to as the disparity in earnings between men and women, remains a significant social and economic issue with far-reaching implications. 
+            This gap is a manifestation of gender-based discrimination and systemic inequalities that persist in workplaces worldwide. 
+            <br><br>
+            Historically, women have earned less than their male counterparts for similar work, perpetuating economic imbalances and hindering societal progress. 
+            According to data from the U.S. Bureau of Labor Statistics, in 2020, women earned approximately 82 cents for every dollar earned by men.  
+            While this represents an improvement from previous years, the gap remains a significant challenge. 
+            <br><br>
+            However, it is crucial to recognize that these statistics don't even encompass the entirety of the problem, as they often exclude unpaid domestic labor.  
+            Ultimately, addressing the wage gap is essential for promoting gender equality, fostering diversity and inclusion, and maximizing the full potential of our workforce and makes sure to value the contributions of all individuals equally.
+        </p>
+        <h3>United States Wage Gap is even more complex.</h3>
+        <div id="race-gap-container">
+            <!-- <svg width="530" height="600" class="pay-gap-svg"></svg> -->
+        </div>
+        <p class="description wage-gap-race">
+            The wage gap becomes even more complex and nuanced when considering the intersectionality of gender and race. 
+            Data reveals that women of color experience an even wider pay gap compared to their white counterparts. 
+            <br><br>
+            According to a study by the National Women's Law Center, in 2020, Black women earned only 63 cents, Native American women 60 cents, and Latina women 55 cents for every dollar earned by white, non-Hispanic men. 
+            This intersectional perspective underscores the need for a more comprehensive approach to addressing pay disparities. 
+            omen of color often face compounded challenges related to both gender and racial biases, leading to systemic barriers in career advancement and fair compensation. 
+            <br><br>
+            Recognizing and addressing these intersecting factors is crucial for creating effective policies and initiatives that promote equality for all. 
+            By acknowledging the multifaceted nature of the wage gap, we can work towards dismantling the barriers that disproportionately affect certain groups, fostering a more inclusive and equitable workforce.
+        </p>
+    </div>
+    <script src="yang_script.js"></script>
+</body>
+</html>

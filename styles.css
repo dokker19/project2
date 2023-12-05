@@ -1,0 +1,15 @@
+svg.bargraph1 { margin: 20px 10px; }
+.blue { fill: #5abae6; }
+.red { fill: #d34e4e; }
+.green { fill: #9dbb19; }
+.yellow { fill: #f7b358; }
+
+#tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    visibility: hidden;
+  }
+  
