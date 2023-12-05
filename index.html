@@ -3,6 +3,9 @@
 <head>
     <title>World Wealth Map</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <link href="https://g1.nyt.com/fonts/css/web-fonts.7705b21d4573b168a8aaebc4ff17d395d2458dca.css" rel="stylesheet" type="text/css">
+
     <link href="https://g1.nyt.com/fonts/css/web-fonts.7705b21d4573b168a8aaebc4ff17d395d2458dca.css" rel="stylesheet" type="text/css">
     <style>
         body {
@@ -81,8 +84,8 @@
         </p>
 
         <h2>United States Wage Gap Representation</h2>
-        <div id="wage-container">
-        </div>
+        <div id="wage-container"></div>
+        <div id="slider-range"></div>
         <p class="description wage-gap">
             The wage gap, often referred to as the disparity in earnings between men and women, remains a significant social and economic issue with far-reaching implications. 
             This gap is a manifestation of gender-based discrimination and systemic inequalities that persist in workplaces worldwide. 
