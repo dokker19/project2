@@ -195,17 +195,17 @@ const sgv_wage_race = d3.select("#race-gap-container")
     .attr('id', 'label')
     .attr("x", d => d.x)
     .attr("y", d => d.y -25)
-    .text(d => d.val)
+    .text(d => (d.val +40)/100)
     .attr('text-anchor', 'middle')
     .attr('alignment-baseline', 'middle')
     .attr('font-size', '12px')
     .attr('fill', 'black');
 
     function handleMouseOver(d, i) {
-        d3.select(this)
-          .transition()
-          .duration(200)
-          .attr('cx', d.x - 1.2); // Increase size on hover
+        // d3.select(this)
+        //   .transition()
+        //   .duration(200)
+        //   .attr('cx', d.x - 1.2); // Increase size on hover
       }
     
 
