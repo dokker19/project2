@@ -102,14 +102,14 @@ legendItems.append("text")
  const showTooltip = function(event, d) {
     tooltip
       .transition()
-      .duration(2)
-    console.log("Country: ", d.country);
-    console.log("Mouse Position: ", event.x, event.y);
+      .duration(200)
     tooltip
       .style("opacity", 1)
       .html("Country: " + d.country)
       .style("left", (event.x)/2 + "px")
       .style("top", (event.y)/2+30 + "px")
+    labels.filter(label => label === d)
+      .style("opacity", 1);
   }
   const moveTooltip = function(event, d) {
     tooltip
@@ -121,6 +121,8 @@ legendItems.append("text")
       .transition()
       .duration(200)
       .style("opacity", 0)
+    labels.filter(label => label === d)
+      .style("opacity", 0);
   }
   
   
@@ -134,30 +136,22 @@ const dots = svg.append('g')
   .attr("cx", d => x(d.gdp))
   .attr("cy", d => y(d.gini_std))
   .attr("r", d => z(d.population))
-  .style("fill", d => myColor(d.region_wb));
+  .style("fill", d => myColor(d.region_wb))
+  .on("mouseover", showTooltip )
+    .on("mousemove", moveTooltip )
+    .on("mouseleave", hideTooltip );
 
-// Add country labels
-const labels = svg.append('g')
-.selectAll("label")
-.data(data)
-.join("text")
-  .attr("class", "country-label")
-  .attr("x", d => x(d.gdp) + 5) // Adjust the position as needed
-  .attr("y", d => y(d.gini_std) + 5) // Adjust the position as needed
-  .style("font-size", "10px")
-  .text(d => d.country)
-  .style("opacity", 0); // Initially hide the labels
-
-// -3- Trigger the functions
-dots
-.on("mouseover", (event, d) => {
-  labels.filter(label => label === d)
-    .style("opacity", 1);
-})
-.on("mousemove", moveTooltip)
-.on("mouseleave", (event, d) => {
-  labels.filter(label => label === d)
-    .style("opacity", 0);
-});
-
+    const labels = svg.append('g')
+  .selectAll("label")
+  .data(data)
+  .join("text")
+    .attr("class", "country-label")
+    .style("font-size", "20px")
+    .style("font-family", "Georgia")
+    .text(d => d.country)
+    .style("opacity", 0)
+    .attr("text-anchor", "start") // Align text to the end (right)
+    .attr("transform", "translate(10, 10)");
   })
+
+  

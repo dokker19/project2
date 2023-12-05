@@ -123,3 +123,55 @@ svg.bargraph1 { margin: 20px 10px; }
     .red { fill: #d34e4e; }
     .green { fill: #9dbb19; }
     .yellow { fill: #f7b358; }
+
+    .axis line {
+        stroke: #706f6f;
+        stroke-width: 0.5;
+        shape-rendering: crispEdges;
+    }
+
+    /* axis contour */
+    .axis path {
+        stroke: #706f6f;
+        stroke-width: 0.7;
+        shape-rendering: crispEdges;
+    }
+
+    /* axis text */
+    .axis text {
+        fill: #2b2929;
+        font-family: Georgia;
+        font-size: 120%;
+    }
+
+    /* LINE CHART */
+    .line {
+        fill: none;
+        stroke: #d2d2d2;
+    }
+
+    .ghost-line {
+        fill: none;
+        stroke: #d2d2d2;
+        opacity: 0;
+        stroke-width: 20;
+    }
+
+    .serie_label {
+        fill: #000000;
+        font-family: Georgia;
+        font-size: 80%;
+    }
+
+    .bubbles {
+        stroke-width: 2px;
+        stroke: white;
+    }
+
+    .bubbles:hover {
+        stroke: black;
+    }
+
+    .axis-title {
+        font-family: 'Georgia', serif;
+    }
