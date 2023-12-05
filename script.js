@@ -6,7 +6,7 @@ var projection = d3.geoMercator()
 
 var path = d3.geoPath().projection(projection);
 
-var svg = d3.select("svg");
+var svg = d3.select(".content .map-container svg");
 
 // Define a tooltip
 var tooltip = d3.select("body").append("div")

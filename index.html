@@ -23,9 +23,10 @@
             margin-top: 20px;
         }
 
-        .map-container {
+        .map-container, .line-container {
             display: flex;
             justify-content: center;
+            margin-top: 20px;
         }
 
         .country {
@@ -51,20 +52,64 @@
             margin-top: 20px;
             font-size: 14px;
         }
+
+        .axis line{
+        stroke: #706f6f;
+        stroke-width: 0.5;
+        shape-rendering: crispEdges;
+        }
+        
+        /* axis contour */
+        .axis path {
+        stroke: #706f6f;
+        stroke-width: 0.7;
+        shape-rendering: crispEdges;
+        }
+        
+        /* axis text */
+        .axis text {
+        fill: #2b2929;
+        font-family: Georgia;
+        font-size: 120%;
+        }
+        
+        /* LINE CHART */
+        .line {
+        fill: none;
+        stroke: #d2d2d2;
+        }
+        
+        .ghost-line {
+        fill: none;
+        stroke: #d2d2d2;
+        opacity: 0;
+        stroke-width: 20;
+        }
+        
+        .serie_label {
+        fill: #000000;
+        font-family: Georgia;
+        font-size: 80%;
+        }
     </style>
 </head>
 <body>
     <h1>Global Wealth Inequality Map</h1>
     <div class="content">
         <div class="map-container">
-            <svg width="960" height="600"></svg>
+            <svg id="map" width="960" height="600"></svg>
         </div>
+        
         <p class="description">
             The GINI coefficient is a measure of income or wealth distribution across a population, used to gauge economic inequality. Values range from 0 to 100, with 0 representing perfect equality (where everyone has the same income) and 100 representing perfect inequality (where all income is held by a single person). This map visualizes the GINI coefficient for countries around the world, illustrating variations in economic disparity.
             <br><br>
             Interesting observations can be made from this map. For instance, countries with higher GINI coefficients, often found in regions such as Latin America and Southern Africa, indicate greater wealth inequality. Conversely, countries in Western Europe and some parts of Asia, which typically have lower GINI coefficients, demonstrate more equal wealth distribution. These variations can be influenced by a variety of factors including economic policies, social structures, and historical contexts.
         </p>
+        <div class="line-container">
+            <svg id="line" width="960" height="600"></svg>
+        </div>
     </div>
     <script src="script.js"></script>
+    <script src="line_chart.js"></script>
 </body>
 </html>
