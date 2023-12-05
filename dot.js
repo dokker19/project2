@@ -1,5 +1,6 @@
 const margin = {top: 10, right: 20, bottom: 30, left: 50};
 
+
 // append the svg object to the body of the page
 const svg = d3.select("#my_dataviz")
   .append("svg")
@@ -89,59 +90,74 @@ legendItems.append("text")
 
   // -1- Create a tooltip div that is hidden by default:
   const tooltip = d3.select("#my_dataviz")
-    .append("div")
-      .style("opacity", 0)
-      .attr("class", "tooltip")
-      .style("background-color", "black")
-      .style("border-radius", "5px")
-      .style("padding", "10px")
-      .style("color", "white")
+  .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "black")
+    .style("border-radius", "5px")
+    .style("padding", "10px")
+    .style("color", "white")
 
  // -2- Create 3 functions to show / update (when mouse move but stay on the same circle) / hide the tooltip
-const showTooltip = function(event, d) {
+ const showTooltip = function(event, d) {
     tooltip
       .transition()
-      .duration(200);
-  
+      .duration(2)
+    console.log("Country: ", d.country);
+    console.log("Mouse Position: ", event.x, event.y);
     tooltip
       .style("opacity", 1)
-      .html(`
-        Country: ${d.country}<br>
-        GDP: ${d.gdp}<br>
-        GINI Index (Standardized): ${d.gini_std}
-      `)
-      .style("left", (event.clientX + 10) + "px") // Adjusted the left position for better readability
-      .style("top", (event.clientY - 20) + "px"); // Adjusted the top position for better readability
-  };
-  
+      .html("Country: " + d.country)
+      .style("left", (event.x)/2 + "px")
+      .style("top", (event.y)/2+30 + "px")
+  }
   const moveTooltip = function(event, d) {
     tooltip
-      .style("left", (event.clientX + 10) + "px") // Adjusted the left position for better readability
-      .style("top", (event.clientY - 20) + "px"); // Adjusted the top position for better readability
-  };
-  
+      .style("left", (event.x)/2 + "px")
+      .style("top", (event.y)/2+30 + "px")
+  }
   const hideTooltip = function(event, d) {
     tooltip
       .transition()
       .duration(200)
-      .style("opacity", 0);
-  };
+      .style("opacity", 0)
+  }
   
   
 
   // Add dots
-  svg.append('g')
-    .selectAll("dot")
-    .data(data)
-    .join("circle")
-      .attr("class", "bubbles")
-      .attr("cx", d => x(d.gdp))
-      .attr("cy", d => y(d.gini_std))
-      .attr("r", d => z(d.population))
-      .style("fill", d => myColor(d.region_wb))
-    // -3- Trigger the functions
-    .on("mouseover", showTooltip )
-    .on("mousemove", moveTooltip )
-    .on("mouseleave", hideTooltip )
+const dots = svg.append('g')
+.selectAll("dot")
+.data(data)
+.join("circle")
+  .attr("class", "bubbles")
+  .attr("cx", d => x(d.gdp))
+  .attr("cy", d => y(d.gini_std))
+  .attr("r", d => z(d.population))
+  .style("fill", d => myColor(d.region_wb));
+
+// Add country labels
+const labels = svg.append('g')
+.selectAll("label")
+.data(data)
+.join("text")
+  .attr("class", "country-label")
+  .attr("x", d => x(d.gdp) + 5) // Adjust the position as needed
+  .attr("y", d => y(d.gini_std) + 5) // Adjust the position as needed
+  .style("font-size", "10px")
+  .text(d => d.country)
+  .style("opacity", 0); // Initially hide the labels
+
+// -3- Trigger the functions
+dots
+.on("mouseover", (event, d) => {
+  labels.filter(label => label === d)
+    .style("opacity", 1);
+})
+.on("mousemove", moveTooltip)
+.on("mouseleave", (event, d) => {
+  labels.filter(label => label === d)
+    .style("opacity", 0);
+});
 
   })
