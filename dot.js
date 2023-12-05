@@ -13,7 +13,7 @@ d3.csv("most_recent_gini.csv").then( function(data) {
 
   // Add X axis
   const x = d3.scaleLinear()
-    .domain([0, 12000])
+    .domain([0, 90000])
     .range([ 0, width ]);
   svg.append("g")
     .attr("transform", `translate(0, ${height})`)
@@ -21,15 +21,15 @@ d3.csv("most_recent_gini.csv").then( function(data) {
 
   // Add Y axis
   const y = d3.scaleLinear()
-    .domain([25, 90])
+    .domain([0, 90])
     .range([ height, 0]);
   svg.append("g")
     .call(d3.axisLeft(y));
 
   // Add a scale for bubble size
-  const z = d3.scaleLinear()
-    .domain([200000, 1310000000])
-    .range([ 4, 40]);
+  const z = d3.scaleSqrt() // Use scaleSqrt for a square root scale for area
+  .domain([200000, 1310000000])
+  .range([4, 40]);
 
   // Add a scale for bubble color
   const myColor = d3.scaleOrdinal()
@@ -61,28 +61,35 @@ d3.csv("most_recent_gini.csv").then( function(data) {
       .style("color", "white")
 
   // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
-  const showTooltip = function(event, d) {
+const showTooltip = function(event, d) {
     tooltip
       .transition()
-      .duration(200)
-    console.log("Country: ", d.country);
+      .duration(200);
+  
     tooltip
       .style("opacity", 1)
-      .html("Country: " + d.country)
-      .style("left", (event.x)/2 + "px")
-      .style("top", (event.y)/2+30 + "px")
-  }
+      .html(`
+        Country: ${d.country}<br>
+        GDP: ${d.gdp}<br>
+        GINI Index (Standardized): ${d.gini_std}
+      `)
+      .style("left", (event.pageX) + "px")
+      .style("top", (event.pageY - 28) + "px"); // Adjusted the top position for better readability
+  };
+  
   const moveTooltip = function(event, d) {
     tooltip
-      .style("left", (event.x)/2 + "px")
-      .style("top", (event.y)/2+30 + "px")
-  }
+      .style("left", (event.pageX) + "px")
+      .style("top", (event.pageY - 28) + "px"); // Adjusted the top position for better readability
+  };
+  
   const hideTooltip = function(event, d) {
     tooltip
       .transition()
       .duration(200)
-      .style("opacity", 0)
-  }
+      .style("opacity", 0);
+  };
+  
 
   // Add dots
   svg.append('g')
