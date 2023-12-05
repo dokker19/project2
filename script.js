@@ -349,7 +349,7 @@ function expandBars2() {
 //-------------------------------------------------------------------------------
 // Wage Gap
 // Set dimensions and margins for the chart
-const margin_wage = { top: 6, right: 10, bottom: 20, left: 40 };
+const margin_wage = { top: 15, right: 10, bottom: 20, left: 40 };
 const width_wage = 600 - margin_wage.left - margin_wage.right;
 const height_wage = 320 - margin_wage.top - margin_wage.bottom;
 
@@ -362,11 +362,11 @@ const y_wage = d3.scaleLinear()
 
 // Define the x and y domains
 x_wage.domain([1965, 2020]);
-y_wage.domain([20000, 50000]);
+y_wage.domain([15000, 50000]);
 
     const male_dataset_wage = [
         { date: 1965, value: 29791 },
-        { date: 1970, value: 20567 },
+        { date: 1970, value: 34642 },
         { date: 1975, value: 36207 },
         { date: 1980, value: 37033 },
         { date: 1985, value: 37131 },
@@ -380,7 +380,7 @@ y_wage.domain([20000, 50000]);
     ];
     const female_dataset_wage = [
         { date: 1965, value: 17852 },
-        { date: 1970, value: 34642},
+        { date: 1970, value: 20567},
         { date: 1975, value: 21297},
         { date: 1980, value: 22279 },
         { date: 1985, value: 23978 },
@@ -429,7 +429,7 @@ sgv_wage.append("path")
     .datum(male_dataset_wage)
     .attr("class", "line_m")
     .attr("fill", "lightblue")
-    .attr("fill-opacity", 0.5).attr("fill-opacity", 0.5)
+    .attr("fill-opacity", 0)
     .attr("stroke", "steelblue")
     .attr("stroke-width", 2)
     .attr("d", line_wage);
@@ -438,7 +438,7 @@ sgv_wage.append("path")
     .datum(female_dataset_wage)
     .attr("class", "line_f")
     .attr("fill", "#F4C2C2")
-    .attr("fill-opacity", 0.5)
+    .attr("fill-opacity", 0)
     .attr("stroke", "#fe019a")
     .attr("stroke-width", 2)
     .attr("d", line_wage);
