@@ -362,35 +362,35 @@ const y_wage = d3.scaleLinear()
 
 // Define the x and y domains
 x_wage.domain([1965, 2020]);
-y_wage.domain([0, 100]);
+y_wage.domain([20000, 50000]);
 
     const male_dataset_wage = [
-        { date: 1965, value: 100 },
-        { date: 1970, value: 90 },
-        { date: 1975, value: 80 },
-        { date: 1980, value: 70 },
-        { date: 1985, value: 65 },
-        { date: 1990, value: 60 },
-        { date: 1995, value: 65 },
-        { date: 2000, value: 50 },
-        { date: 2005, value: 60 },
-        { date: 2010, value: 70 },
-        { date: 2015, value: 80 },
-        { date: 2020, value: 90 }
+        { date: 1965, value: 29791 },
+        { date: 1970, value: 20567 },
+        { date: 1975, value: 36207 },
+        { date: 1980, value: 37033 },
+        { date: 1985, value: 37131 },
+        { date: 1990, value: 35538 },
+        { date: 1995, value: 35365 },
+        { date: 2000, value: 37339 },
+        { date: 2005, value: 41386 },
+        { date: 2010, value: 47715 },
+        { date: 2015, value: 51212 },
+        { date: 2020, value: 57456 }
     ];
     const female_dataset_wage = [
-        { date: 1965, value: 0 },
-        { date: 1970, value: 10},
-        { date: 1975, value: 20},
-        { date: 1980, value: 30 },
-        { date: 1985, value: 35 },
-        { date: 1990, value: 40 },
-        { date: 1995, value: 41 },
-        { date: 2000, value: 42 },
-        { date: 2005, value: 43 },
-        { date: 2010, value: 44 },
-        { date: 2015, value: 45 },
-        { date: 2020, value: 50 }
+        { date: 1965, value: 17852 },
+        { date: 1970, value: 34642},
+        { date: 1975, value: 21297},
+        { date: 1980, value: 22279 },
+        { date: 1985, value: 23978 },
+        { date: 1990, value: 25451 },
+        { date: 1995, value: 25260 },
+        { date: 2000, value: 27355 },
+        { date: 2005, value: 31858 },
+        { date: 2010, value: 36931 },
+        { date: 2015, value: 40742 },
+        { date: 2020, value: 47299 }
       ];
     
 
