@@ -60,24 +60,32 @@ const legend = svg.append("g")
 
 // Add legend items
 const legendItems = legend.selectAll(".legend-item")
-.data(["East Asia and the Pacific", "Europe and Central Asia", "South Asia", "Sub-Saharan Africa", "Middle East and North Africa", "Latin America and the Caribbean", "North America"])
-.enter().append("g")
-.attr("class", "legend-item")
-.attr("transform", (d, i) => `translate(0, ${i * 20})`);
+  .data(["East Asia and the Pacific", "Europe and Central Asia", "South Asia", "Sub-Saharan Africa", "Middle East and North Africa", "Latin America and the Caribbean", "North America"])
+  .enter().append("g")
+  .attr("class", "legend-item")
+  .attr("transform", (d, i) => `translate(0, ${i * 20})`);
 
 // Add colored squares to represent regions in the legend
 legendItems.append("rect")
-.attr("width", 15)
-.attr("height", 15)
-.attr("fill", d => myColor(d));
+  .attr("width", 15)
+  .attr("height", 15)
+  .style("fill", d => {
+    const color = myColor(d);
+    if (color) {
+      return color;
+    } else {
+      console.error(`No color found for legend item: ${d}`);
+      return "gray"; // or any fallback color
+    }
+  });
 
 // Add text labels to the legend items
 legendItems.append("text")
-.attr("x", 20)
-.attr("y", 10)
-.text(d => d)
-.style("font-size", "12px")
-.style("fill", "black");
+  .attr("x", 20)
+  .attr("y", 10)
+  .text(d => d)
+  .style("font-size", "12px")
+  .style("fill", "black");
 
   // -1- Create a tooltip div that is hidden by default:
   const tooltip = d3.select("#my_dataviz")
@@ -89,7 +97,7 @@ legendItems.append("text")
       .style("padding", "10px")
       .style("color", "white")
 
-  // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+ // -2- Create 3 functions to show / update (when mouse move but stay on the same circle) / hide the tooltip
 const showTooltip = function(event, d) {
     tooltip
       .transition()
@@ -102,14 +110,14 @@ const showTooltip = function(event, d) {
         GDP: ${d.gdp}<br>
         GINI Index (Standardized): ${d.gini_std}
       `)
-      .style("left", (event.pageX) + "px")
-      .style("top", (event.pageY - 28) + "px"); // Adjusted the top position for better readability
+      .style("left", (event.clientX + 10) + "px") // Adjusted the left position for better readability
+      .style("top", (event.clientY - 20) + "px"); // Adjusted the top position for better readability
   };
   
   const moveTooltip = function(event, d) {
     tooltip
-      .style("left", (event.pageX) + "px")
-      .style("top", (event.pageY - 28) + "px"); // Adjusted the top position for better readability
+      .style("left", (event.clientX + 10) + "px") // Adjusted the left position for better readability
+      .style("top", (event.clientY - 20) + "px"); // Adjusted the top position for better readability
   };
   
   const hideTooltip = function(event, d) {
@@ -118,6 +126,7 @@ const showTooltip = function(event, d) {
       .duration(200)
       .style("opacity", 0);
   };
+  
   
 
   // Add dots
