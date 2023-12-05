@@ -60,6 +60,12 @@
             font-size: 16px;
             font: nyt-franklin;
         }
+        svg.bargraph1 { margin: 20px 10px; }
+            .blue { fill: #5abae6; }
+            .red { fill: #d34e4e; }
+            .green { fill: #9dbb19; }
+            .yellow { fill: #f7b358; }
+        
         
     </style>
 </head>
@@ -67,21 +73,61 @@
     <h1>Understanding Wealth Inequality</h1> 
         
     <div class="content">
+        <!-- Dokyung's section START-->
         <p class="intro">
+<<<<<<< HEAD:index.html
             In a world shaped by interconnected economies, comprehending the challenges and disparities in wealth distribution is more crucial than ever. 
             <br><br>
             Our mission is to educate and illuminate the intricacies of wealth inequality, providing insights and data-driven analysis to foster a deeper understanding of the complex factors at play. 
             As economic globalization continues to intertwine nations and societies, the consequences of uneven wealth distribution extend far beyond individual financial circumstances, influencing access to education, healthcare, and opportunities for countless individuals.
+=======
+            In a world shaped by interconnected economies, comprehending the challenges and disparities in 
+            wealth distribution is more crucial than ever. Our mission is to educate and illuminate the intricacies 
+            of wealth inequality, providing insights and data-driven analysis.
+>>>>>>> 85bc312 (yang):yang.html
         </p>
         <h2>Global Wealth Inequality Map</h2>
         <div class="map-container">
             <svg class="world_map" width="960" height="600"></svg>
         </div>
         <p class="description">
-            The GINI coefficient is a measure of income or wealth distribution across a population, used to gauge economic inequality. Values range from 0 to 100, with 0 representing perfect equality (where everyone has the same income) and 100 representing perfect inequality (where all income is held by a single person). This map visualizes the GINI coefficient for countries around the world, illustrating variations in economic disparity.
+            The GINI coefficient is a measure of income or wealth distribution across a population, 
+            used to gauge economic inequality. Values range from 0 to 100, with 0 representing perfect equality
+             (where everyone has the same income) and 100 representing perfect inequality (where all income 
+             is held by a single person). This map visualizes the GINI coefficient for countries around the world, 
+             illustrating variations in economic disparity.
             <br><br>
-            Interesting observations can be made from this map. For instance, countries with higher GINI coefficients, often found in regions such as Latin America and Southern Africa, indicate greater wealth inequality. Conversely, countries in Western Europe and some parts of Asia, which typically have lower GINI coefficients, demonstrate more equal wealth distribution. These variations can be influenced by a variety of factors including economic policies, social structures, and historical contexts.
+            Interesting observations can be made from this map. For instance, countries with higher GINI coefficients,
+             often found in regions such as Latin America and Southern Africa, indicate greater wealth inequality. 
+             Conversely, countries in Western Europe and some parts of Asia, which typically have lower GINI coefficients, 
+             demonstrate more equal wealth distribution. These variations can be influenced by a variety of factors
+              including economic policies, social structures, and historical contexts.
         </p>
+
+        <br/>
+
+        <p>
+            So let's visualize some countries with high GINI index. 
+        </p>
+        <div id="bargraph1-tooltip" style="position: absolute; top: 1400px; left: 200px;"></div>
+        <div class="barGraph-container">
+            <svg class="bargraph1" width='300' height='900' style="margin: 20px"></svg> 
+        </div>
+
+        <br/>
+
+        <p>
+            United States, with GINI index of 41.5, is at the botom. Does that mean the income inequality is not
+            a problem in the states? 
+        </p>
+
+        <div id="bargraph2-tooltip" style="position: absolute; top: 2400px; left: 200px;"></div>
+        <div class="barGraph2-container">
+            <svg class="bargraph2" width='300' height='900' style="margin: 20px"></svg> 
+        </div>
+        
+        <!-- Dokyung's section END-->
+
 
         <h2>United States Wage Gap Representation</h2>
         <div id="wage-container"></div>
@@ -113,6 +159,6 @@
             By acknowledging the multifaceted nature of the wage gap, we can work towards dismantling the barriers that disproportionately affect certain groups, fostering a more inclusive and equitable workforce.
         </p>
     </div>
-    <script src="script.js"></script>
+    <script src="yang_script.js"></script>
 </body>
 </html>
