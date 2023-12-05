@@ -36,19 +36,48 @@ d3.csv("most_recent_gini.csv").then( function(data) {
     .domain(["East Asia and the Pacific", "Europe and Central Asia", "South Asia", "Sub-Saharan Africa", "Middle East and North Africa", "Latin America and the Caribbean","North America"])
     .range(d3.schemeSet2);
 
-    svg.append("text")
-    .attr("text-anchor", "end")
-    .attr("x", width)
-    .attr("y", height + margin.top + 20)
-    .text("GDP");
+// X axis label
+svg.append("text")
+  .attr("class", "axis-title")
+  .attr("text-anchor", "end")
+  .attr("x", width)
+  .attr("y", height + margin.top + 20)
+  .text("GDP");
 
-    // Y axis label
-    svg.append("text")
-        .attr("text-anchor", "end")
-        .attr("transform", "rotate(-90)")
-        .attr("y", -margin.left + 20)
-        .attr("x", -margin.top)
-        .text("GINI Index (Standardized)");
+// Y axis label
+svg.append("text")
+  .attr("class", "axis-title")
+  .attr("text-anchor", "end")
+  .attr("transform", "rotate(-90)")
+  .attr("y", -margin.left + 20)
+  .attr("x", -margin.top)
+  .text("GINI Index (Standardized)");
+
+        // Create a legend
+const legend = svg.append("g")
+.attr("class", "legend")
+.attr("transform", `translate(${width - 9*margin.right}, ${margin.top})`);
+
+// Add legend items
+const legendItems = legend.selectAll(".legend-item")
+.data(["East Asia and the Pacific", "Europe and Central Asia", "South Asia", "Sub-Saharan Africa", "Middle East and North Africa", "Latin America and the Caribbean", "North America"])
+.enter().append("g")
+.attr("class", "legend-item")
+.attr("transform", (d, i) => `translate(0, ${i * 20})`);
+
+// Add colored squares to represent regions in the legend
+legendItems.append("rect")
+.attr("width", 15)
+.attr("height", 15)
+.attr("fill", d => myColor(d));
+
+// Add text labels to the legend items
+legendItems.append("text")
+.attr("x", 20)
+.attr("y", 10)
+.text(d => d)
+.style("font-size", "12px")
+.style("fill", "black");
 
   // -1- Create a tooltip div that is hidden by default:
   const tooltip = d3.select("#my_dataviz")
