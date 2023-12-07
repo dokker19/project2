@@ -3,7 +3,7 @@
 // Set dimensions and margins for the chart
 const margin_wage = { top: 05, right: 40, bottom: 20, left: 55 };
 const width_wage = 600 - margin_wage.left - margin_wage.right;
-const height_wage = 280 - margin_wage.top - margin_wage.bottom;
+const height_wage = 230 - margin_wage.top - margin_wage.bottom;
 
 // Set up the x and y scales
 const x_wage = d3.scaleLinear()
